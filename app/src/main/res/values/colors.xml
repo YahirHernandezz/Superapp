@@ -2,4 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="marvelRed">#D32F2F</color> <!-- Vibrant Marvel Red -->
+    <color name="dcSuperBlue">#007ACC</color> <!-- Intense DC Blue -->
+    <color name="ironManGold">#FFC107</color>
+    <color name="wonderWomanSilver">#BDC3C7</color>
+    <color name="hulkGreen">#2ECC71</color>
+    <color name="gothamGray">#34495E</color>
+    <color name="starkTechBlack">#2C3E50</color>
+
 </resources>
