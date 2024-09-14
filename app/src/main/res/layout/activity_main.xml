@@ -69,9 +69,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/emailET"
         app:layout_constraintVertical_bias="0.328"
+        android:backgroundTint="@color/dcSuperBlue"
         android:text="@string/login"
         />
 
+    <ImageView
+        android:id="@+id/heroeImg"
+        android:layout_width="352dp"
+        android:layout_height="210dp"
+        android:src="@drawable/heroes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnLogin"
+        app:layout_constraintVertical_bias="0.821" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
