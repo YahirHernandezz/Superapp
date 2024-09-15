@@ -74,7 +74,7 @@
         />
 
     <ImageView
-        android:id="@+id/heroeImg"
+        android:id="@+id/heroesImg"
         android:layout_width="352dp"
         android:layout_height="210dp"
         android:src="@drawable/heroes"

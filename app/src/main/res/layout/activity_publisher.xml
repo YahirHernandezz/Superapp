@@ -7,56 +7,77 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="25dp">
 
         <LinearLayout
+            android:id="@+id/headerLayout"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0"
-            >
+            app:layout_constraintVertical_bias="0">
 
             <ImageView
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:src="@drawable/baseline_account_circle_24"
-                app:tint="@color/dcSuperBlue"
-                />
+                app:tint="@color/dcSuperBlue" />
 
             <TextView
                 android:id="@+id/usernameTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:text="@string/welcome_text"
-                android:textStyle="bold"
                 android:textSize="24sp"
-                android:layout_marginLeft="10dp"
-                />
+                android:textStyle="bold" />
 
             <Space
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.1"
-                />
+                android:layout_weight="0.1" />
 
             <ImageView
                 android:id="@+id/logoutBtn"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:src="@drawable/baseline_logout_24"
-                app:tint="@color/marvelRed"
-                />
-
+                app:tint="@color/marvelRed" />
         </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/best_bandoTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/team_ask"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/headerLayout"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/bando_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/best_bandoTV"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

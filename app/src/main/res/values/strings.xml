@@ -3,5 +3,6 @@
     <string name="correo">Correo electrónico</string>
     <string name="password">Contraseña</string>
     <string name="login">Iniciar sesión</string>
-    <string name="welcome_text">Hola, que team eres?</string>
+    <string name="welcome_text">¡Hola, bienvenido súper!</string>
+    <string name="team_ask">¿Qué team eres?</string>
 </resources>
