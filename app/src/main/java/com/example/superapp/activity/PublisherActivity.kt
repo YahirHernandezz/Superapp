@@ -40,6 +40,8 @@ class PublisherActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
+
         val user = User.users[1]
         usernameTV.text = user.startName
         logoutBtn.setOnClickListener {

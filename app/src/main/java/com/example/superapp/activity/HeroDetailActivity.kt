@@ -24,7 +24,7 @@ class HeroDetailActivity : AppCompatActivity() {
         superImageView = findViewById(R.id.super_image)
 
 
-        val superId = intent.getIntExtra("foodId",0)
+        val superId = intent.getIntExtra("superId",0)
 
         val hero = Super.supers.firstOrNull{ hero : Super ->
             hero.id == superId
