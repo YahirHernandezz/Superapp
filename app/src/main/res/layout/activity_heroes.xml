@@ -13,13 +13,14 @@
         android:id="@+id/bando_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/american"
         android:text="Nombre del bando"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        android:textSize="24sp"
+        android:textSize="34sp"
         android:textStyle="bold"
         />
 

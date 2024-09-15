@@ -37,8 +37,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
+                android:fontFamily="@font/bring"
                 android:text="@string/welcome_text"
-                android:textSize="24sp"
+                android:textSize="26sp"
                 android:textStyle="bold" />
 
             <Space
@@ -62,6 +63,8 @@
             android:text="@string/team_ask"
             android:textSize="24sp"
             android:textStyle="bold"
+            android:gravity="center"
+            android:fontFamily="@font/riesling"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
