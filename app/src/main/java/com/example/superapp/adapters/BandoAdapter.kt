@@ -1,5 +1,6 @@
 package com.example.superapp.adapters
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,30 +12,31 @@ import com.example.superapp.R
 import com.example.superapp.models.Publisher
 import com.squareup.picasso.Picasso
 
-class BandoAdapter(val bandoList : List<Publisher>, val onClick:(Publisher)->Unit)
-    : RecyclerView.Adapter<BandoViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BandoViewHolder {
-        //MANDAMOS A LLAMARLO DE PARENT (PublisherActivity), INFLAMOS/MOSTRAR EL RESTAURANT ITEM
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.bando_item,parent,false)
-        return BandoViewHolder(view)
-    }
+class BandoAdapter(
+    private val context: Context,
+    private val publishers: List<Publisher>,
+    private val onItemClick: (Publisher) -> Unit
+) : RecyclerView.Adapter<BandoAdapter.ViewHolder>() {
 
-    override fun getItemCount(): Int {
-        return bandoList.count()
-    }
+    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val imageView: ImageView = view.findViewById(R.id.publisherImageView)
 
-    override fun onBindViewHolder(holder: BandoViewHolder, position: Int) {
-        val heroe = bandoList[position]
-        holder.heroeNameTV.text = heroe.name
-        Picasso.get().load(heroe.image).into(holder.heroeImage)
-        //itemView es el conjunto que hay en Bando Adpater, agarra all lo que haya en esa vista
-        holder.itemView.setOnClickListener{
-            onClick(heroe)
+        init {
+            view.setOnClickListener {
+                onItemClick(publishers[adapterPosition])
+            }
         }
     }
-}
 
-class BandoViewHolder(view : View) : ViewHolder(view){
-    val heroeNameTV : TextView = view.findViewById(R.id.bando_name)
-    val heroeImage : ImageView = view.findViewById(R.id.bando_image)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(context).inflate(R.layout.publusher_item, parent, false)
+        return ViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val publisher = publishers[position]
+        Picasso.get().load(publisher.image).into(holder.imageView)
+    }
+
+    override fun getItemCount(): Int = publishers.size
 }

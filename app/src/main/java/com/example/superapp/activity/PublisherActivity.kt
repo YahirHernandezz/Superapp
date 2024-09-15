@@ -9,6 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.superapp.R
 import com.example.superapp.models.User
@@ -20,20 +21,22 @@ class PublisherActivity : AppCompatActivity() {
     lateinit var usernameTV : TextView
     lateinit var logoutBtn : ImageView
     lateinit var bandoRecyclerView: RecyclerView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_publisher)
+
         val sharedPreferences = getSharedPreferences("myPrefs", MODE_PRIVATE)
         usernameTV = findViewById(R.id.usernameTV)
         logoutBtn = findViewById(R.id.logoutBtn)
 
         //BANDO DE HEROES
         bandoRecyclerView = findViewById(R.id.bando_recyclerview)
-        bandoRecyclerView.adapter = BandoAdapter(Publisher.publishers){ restaurant ->
-            Log.i("Restaurant desde Home", restaurant.name)
-            val intent = Intent(this@PublisherActivity,HeroesActivity::class.java)
-            intent.putExtra("publisherId",restaurant.id)
+        bandoRecyclerView.layoutManager = LinearLayoutManager(this)
+        bandoRecyclerView.adapter = BandoAdapter(this, Publisher.publishers) { publisher ->
+            val intent = Intent(this, HeroesActivity::class.java)
+            intent.putExtra("publisherId", publisher.id)
             startActivity(intent)
         }
 

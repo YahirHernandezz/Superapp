@@ -5,14 +5,14 @@
     android:id="@+id/main"
     tools:context=".activity.PublisherActivity"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="25dp">
 
+        <!-- Layout del encabezado -->
         <LinearLayout
             android:id="@+id/headerLayout"
             android:layout_width="match_parent"
@@ -54,6 +54,7 @@
                 app:tint="@color/marvelRed" />
         </LinearLayout>
 
+        <!-- Título -->
         <TextView
             android:id="@+id/best_bandoTV"
             android:layout_width="match_parent"
@@ -68,16 +69,17 @@
             app:layout_constraintTop_toBottomOf="@+id/headerLayout"
             app:layout_constraintVertical_bias="0.0" />
 
+        <!-- RecyclerView para las imágenes -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/bando_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/best_bandoTV"
             app:layout_constraintVertical_bias="0.0" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
